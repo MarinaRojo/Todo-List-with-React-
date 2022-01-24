@@ -78,7 +78,9 @@ const Home = () => {
 
 	return (
 		<div>
-			<div className="container col-8" style={{ background: "#AFFFC0" }}>
+			<div
+				className="container col-8 pb-2"
+				style={{ background: "#AFFFC0" }}>
 				<h1 className="text-center">Todo List de Marina Rojo</h1>
 				<div className="input-group mt-3 w-75 m-auto">
 					<input

@@ -4,15 +4,16 @@ import propTypes from "prop-types";
 const TodoList = (props) => {
 	return (
 		<div>
-			<li>
-				{props.todo.todo}
-				<button
-					className="btn btn-primary"
-					onClick={() => props.deleteTodo(props.id)}>
-					Delete
-				</button>
+			<li className="list-group-item d-flex">
+				<p className="w-100 pt-3">{props.todo.todo}</p>
 				<select
-					className="form-select bg-light"
+					className={
+						props.todo.priority == "normal"
+							? "form-select w-25 m-2 bg-success"
+							: props.todo.priority == "importante"
+							? "form-select w-25 m-2 bg-warning"
+							: "form-select w-25 m-2 bg-danger"
+					}
 					aria-label="Priority"
 					value={props.todo.priority}
 					onChange={(e) => {
@@ -37,6 +38,10 @@ const TodoList = (props) => {
 						Importante
 					</option>
 				</select>
+				<button
+					className="btn-close btn-primary ml-3"
+					type="button"
+					onClick={() => props.deleteTodo(props.id)}></button>
 			</li>
 		</div>
 	);
