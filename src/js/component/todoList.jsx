@@ -14,14 +14,18 @@ const TodoList = (props) => {
 				<select
 					className="form-select bg-light"
 					aria-label="Priority"
-					defaultValue={props.todo.priority}
-					onChange={(event) =>
+					value={props.todo.priority}
+					onChange={(e) => {
+						let oldPriority = props.todo.priority;
+						props.todo.priority = e.target.value;
+
 						props.modifyPriority(
-							event.target.value,
 							props.todo.todo,
+							oldPriority,
+							props.todo.priority,
 							props.id
-						)
-					}>
+						);
+					}}>
 					<option>Select priority</option>
 					<option value="normal" className="bg-success">
 						Normal
