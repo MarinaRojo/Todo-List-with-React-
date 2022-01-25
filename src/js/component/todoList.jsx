@@ -4,7 +4,9 @@ import propTypes from "prop-types";
 const TodoList = (props) => {
 	return (
 		<div>
-			<li className="list-group-item d-flex">
+			<li
+				className="list-group-item d-flex"
+				style={{ background: "#80FF9B" }}>
 				<p className="w-100 pt-3">{props.todo.todo}</p>
 				<select
 					className={

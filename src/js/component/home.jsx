@@ -131,11 +131,11 @@ const Home = () => {
 					)}
 				</div>
 				<div className="w-75 m-auto d-flex justify-content-evenly mt-4 mb-4">
-					<span className="badge bg-warning rounded-pill col-1">
-						{countImportant}
-					</span>
 					<span className="badge bg-success rounded-pill col-1">
 						{countNormal}
+					</span>
+					<span className="badge bg-warning rounded-pill col-1">
+						{countImportant}
 					</span>
 					<span className="badge bg-danger rounded-pill col-1">
 						{countUrgent}
